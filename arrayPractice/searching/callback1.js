@@ -15,3 +15,11 @@ let course = courses.find(function (course) {
 
 console.log("using find method");
 console.log(course);
+
+//making  arrow function
+
+let course1 = courses.find((course) => course.naam == "Nitish");
+
+console.log("using arrow function");
+
+console.log(course1);
