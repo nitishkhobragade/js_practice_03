@@ -9,9 +9,11 @@ JS Statements
 JS Syntax
 JS Comments
 
+
 **JS Variables**
 JS Let
 JS Const
+
 
 **JS Operators**
 JS Arithmetic
@@ -35,6 +37,7 @@ JS Array Search
 JS Array Sort
 JS Array Iteration
 JS Array Const
+
 
 **JS Dates**
 JS Date Formats
@@ -74,6 +77,7 @@ JS Best Practices
 JS Mistakes
 JS Performance
 JS Reserved Words
+
 
 **JS Versions**
 **JS Versions**
