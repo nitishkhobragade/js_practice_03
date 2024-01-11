@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <h5>JavaScript Array Methods</h5>
+  </head>
+  <body>
+    <script>
+      var arr = []; //Creating a user-define array.
+      for (i = 0; i < 5; i++)
+        arr[i] = prompt("Enter any five elements" + (i + 1));
+      document.write("The elements entered by the user are: <br>");
+      for (i = 0; i < 5; i++) {
+        document.write(arr[i]);
+        document.write("<br>");
+      }
+      function create() {
+        var itr = arr.keys();
+        document.write("Keys generated are: <br>");
+        for (key of itr) document.write(key + "</br>");
+      } //This function will generate keys for the array elements.
+    </script>
+    <input type="button" onClick="create()" value="Get Keys" />
+  </body>
+</html>
