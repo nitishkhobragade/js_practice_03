@@ -1,0 +1,24 @@
+<html>
+<head> <h5> Array Methods </h5> </br> </head>
+<body>
+<script>
+function user_def_arr(n) //n is the size of array
+{
+	var a=[],i; //creating user-defined array
+	n=document.getElementById("num").value;
+	for(i=0;i<n;i++)
+		a[i]=prompt('Enter the elements'+(i+1)); //entering elements in array through prompt box
+	for(i=0;i<n;i++)
+	{
+		document.write("a["+i+"]="+a[i]); //Printing the array elements
+		document.write("<br>");
+	}
+	var str=a.toString(); //toString() method implementation
+    document.write("After converting the array elements into string:  "+str);	
+}
+</script>
+</body>
+  <h2>We can also represent a user-defined array into string format. Let's see in this example.</h2>
+<input type="text" id="num"/>
+<input type="button" onClick="user_def_arr(num)" value="Input Value"/>
+</html>
