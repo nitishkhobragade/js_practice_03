@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Code Compiler</title>
+    <link rel="stylesheet" href="../editor.css" />
+  </head>
+  <body>
+    <h3 class="question">Question : Implement Bubble Sort in JavaScript for Array Sorting.</h3>
+    <div class="btn-container">
+      <button id="runBtn">Run</button>
+      <button id="copyBtn">Copy Code</button>
+    </div>
+    <div class="editor-container">
+      <div id="editor">
+        let a = [23, 34, 55, 76, 3, 5, 10]; function bubbleSort(arr) { const n =
+        arr.length; // Get the length of the array for (let i = 0; i < n-1; i++)
+        { // Outer loop for each pass for (let j = 0; j < n-i-1; j++) { // Inner
+        loop for comparisons if (arr[j] > arr[j+1]) { // If current element is
+        greater than the next // Swap arr[j] and arr[j+1] let temp = arr[j]; //
+        Store arr[j] in a temporary variable arr[j] = arr[j+1]; // Replace
+        arr[j] with arr[j+1] arr[j+1] = temp; // Replace arr[j+1] with the
+        stored value (temp) } } } return arr; // Return the sorted array } let
+        sortedArray = bubbleSort(a); // Call bubbleSort function to sort the
+        array 'a' console.log("Sorted array:", sortedArray); // Print the sorted
+        array to the console
+      </div>
+    </div>
+    <div class="result-container">
+      <h3>Output:</h3>
+      <div id="result"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tern/0.12.0/tern.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ext-language_tools.js"></script>
+    <script src="../editor.js"></script>
+  </body>
+</html>
