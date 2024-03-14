@@ -30,15 +30,18 @@ function runCode() {
 // Function to copy the code from the editor
 function copyCode() {
     var code = editor.getValue();
-    navigator.clipboard.writeText(code)
-        .then(() => alert('Code copied to clipboard'))
-        .catch(err => console.error('Could not copy code: ', err));
+    if(code != "") {
+        alert('Code copied to clipboard.')
+        navigator.clipboard.writeText(code)
+    } else {
+        alert('Editor is empty, Please enter the Code first !')
+    }
 }
 
 // Run button click event listener
 document.getElementById('runBtn').addEventListener('click', runCode);
 
 // Copy button click event listener
-document.getElementById('copyBtn').addEventListener('click', copyCode);
+document.getElementById('copyButton').addEventListener('click', copyCode);
 
 
