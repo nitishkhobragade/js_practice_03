@@ -13,7 +13,7 @@ function runCode() {
         // Capture console.log output
         var log = console.log;
         console.log = function(output) {
-            document.getElementById('result').innerText += output + "\n";
+            document.getElementById('result').innerText += output +"\n";
         };
 
         // Execute the JavaScript code

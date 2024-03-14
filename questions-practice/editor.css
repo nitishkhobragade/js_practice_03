@@ -71,3 +71,9 @@ h3.question {
 
     }
 }
+
+@media screen and (max-width: 520px) {
+    #editor {
+        font-size: 0.8rem;
+    }
+}

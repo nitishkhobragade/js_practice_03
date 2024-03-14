@@ -1,39 +1,90 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaScript Code Compiler</title>
-    <link rel="stylesheet" href="../editor.css" />
-  </head>
-  <body>
-    <h3 class="question">Question : Implement Bubble Sort in JavaScript for Array Sorting.</h3>
-    <div class="btn-container">
-      <button id="runBtn">Run</button>
-      <button id="copyBtn">Copy Code</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Code Compiler</title>
+  <link rel="stylesheet" href="../editor.css" />
+</head>
+<body>
+  <h3 class="question">Question: Implement Bubble Sort in JavaScript for Array Sorting.</h3>
+  <div class="btn-container">
+    <button id="runBtn">Run</button>
+    <button id="copyBtn">Copy Code</button>
+  </div>
+  <div class="editor-container">
+    <div id="editor">
+let a = [23, 34, 55, 76, 3, 5, 10];
+
+function bubbleSort(arr) {
+    const n = arr.length; // Get the length of the array
+    for (let i = 0; i &lt; n-1; i++) { // Outer loop for each pass
+        for (let j = 0; j &lt; n-i-1; j++) { // Inner loop for comparisons
+            if (arr[j] &gt; arr[j+1]) { // If current element is greater than the next
+                // Swap arr[j] and arr[j+1]
+                let temp = arr[j]; // Store arr[j] in a temporary variable
+                arr[j] = arr[j+1]; // Replace arr[j] with arr[j+1]
+                arr[j+1] = temp; // Replace arr[j+1] with the stored value (temp)
+            }
+        }
+    }
+    return arr; // Return the sorted array
+}
+
+let sortedArray = bubbleSort(a); // Call bubbleSort function to sort the array 'a'
+document.write("Sorted array:", sortedArray); // Print the sorted array to the console
     </div>
-    <div class="editor-container">
-      <div id="editor">
-        let a = [23, 34, 55, 76, 3, 5, 10]; function bubbleSort(arr) { const n =
-        arr.length; // Get the length of the array for (let i = 0; i < n-1; i++)
-        { // Outer loop for each pass for (let j = 0; j < n-i-1; j++) { // Inner
-        loop for comparisons if (arr[j] > arr[j+1]) { // If current element is
-        greater than the next // Swap arr[j] and arr[j+1] let temp = arr[j]; //
-        Store arr[j] in a temporary variable arr[j] = arr[j+1]; // Replace
-        arr[j] with arr[j+1] arr[j+1] = temp; // Replace arr[j+1] with the
-        stored value (temp) } } } return arr; // Return the sorted array } let
-        sortedArray = bubbleSort(a); // Call bubbleSort function to sort the
-        array 'a' console.log("Sorted array:", sortedArray); // Print the sorted
-        array to the console
-      </div>
-    </div>
-    <div class="result-container">
-      <h3>Output:</h3>
-      <div id="result"></div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tern/0.12.0/tern.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ext-language_tools.js"></script>
-    <script src="../editor.js"></script>
-  </body>
+  </div>
+  <div class="result-container">
+    <h3>Output:</h3>
+    <div id="result"></div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tern/0.12.0/tern.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ext-language_tools.js"></script>
+  <script src="../editor.js"></script>
+  <script>
+    // Initialize ACE editor
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/cobalt"); // Set the editor theme
+    editor.getSession().setMode("ace/mode/javascript"); // Set JavaScript mode
+
+    // Function to run the JavaScript code
+    function runCode() {
+        var code = editor.getValue();
+        try {
+            // Clear previous output
+            document.getElementById('result').innerText = '';
+
+            // Capture console.log output
+            var log = console.log;
+            console.log = function(output) {
+                document.getElementById('result').innerText += output + "\n";
+            };
+
+            // Execute the JavaScript code
+            eval(code);
+
+            // Restore console.log function
+            console.log = log;
+        } catch (error) {
+            document.getElementById('result').innerText = 'Error: ' + error.message;
+        }
+    }
+
+    // Function to copy the code from the editor
+    function copyCode() {
+        var code = editor.getValue();
+        navigator.clipboard.writeText(code)
+            .then(() => alert('Code copied to clipboard'))
+            .catch(err => console.error('Could not copy code: ', err));
+    }
+
+    // Run button click event listener
+    document.getElementById('runBtn').addEventListener('click', runCode);
+
+    // Copy button click event listener
+    document.getElementById('copyBtn').addEventListener('click', copyCode);
+  </script>
+</body>
 </html>
