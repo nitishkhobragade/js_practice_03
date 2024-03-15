@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FIND LARGEST NUMBER IN ARRAY</title>
+  <link rel="stylesheet" href="../editor.css" />
+</head>
+<body>
+  <h3 class="question">Question: WRITE A CODE TO FIND LARGEST NUMBER IN ARRAY</h3>
+  <div class="btn-container">
+    <button id="runBtn">Run</button>
+    <button id="copyButton">Copy Code</button>
+  </div>
+  <div class="editor-container">
+    <div id="editor">function findLargestNumber(array) { // Function definition to find the largest number in an array
+  if (array.length === 0) { // Check if the array is empty
+      return "Array is empty"; // Return a message if the array is empty
+  }
+
+  let largest = array[0]; // Initialize a variable to store the largest number, assuming the first element is the largest
+
+  for (let i = 1; i < array.length; i++) { // Loop through the array starting from the second element
+      if (array[i] > largest) { // Compare the current element with the largest number found so far
+          largest = array[i]; // If the current element is larger, update the largest number
+      }
+  }
+
+  return largest; // Return the largest number found in the array
+}
+
+// Example usage:
+const numbers = [10, 40, 5, 30, 25]; // Array of numbers
+document.write("Largest number:", findLargestNumber(numbers)); // Output the largest number found in the array
+    
+    </div>
+  </div>
+  <div class="result-container">
+    <h3>Output:</h3>
+    <div id="result"></div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tern/0.12.0/tern.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ext-language_tools.js"></script>
+  <script src="../editor.js"></script>
+
+</body>
+</html>
