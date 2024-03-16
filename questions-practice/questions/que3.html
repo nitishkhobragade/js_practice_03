@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>string pelindrome 01</title>
+  <link rel="stylesheet" href="../editor.css" />
+</head>
+<body>
+  <h3 class="question">Question: Write a function for checking string pelindrome</h3>
+  <div class="btn-container">
+    <button id="runBtn">Run</button>
+    <button id="copyButton">Copy Code</button>
+  </div>
+  <div class="editor-container">
+    <div id="editor">function isPalindrome(str) { // Function definition to check if a string is a palindrome
+    // Remove non-alphanumeric characters and convert the string to lowercase
+    const cleanStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+    // Compare the characters in the cleaned string
+    for (let i = 0; i < cleanStr.length / 2; i++) {
+        // If characters from the beginning and end don't match, return false
+        if (cleanStr[i] !== cleanStr[cleanStr.length - 1 - i]) {
+            return false;
+        }
+    }
+    // If the loop completes without returning false, the string is a palindrome
+    return true;
+}
+
+// Example usage:
+const inputString = "kanaK";
+document.write("Is the string a palindrome?", isPalindrome(inputString));
+    
+    </div>
+  </div>
+  <div class="result-container">
+    <h3>Output:</h3>
+    <div id="result"></div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tern/0.12.0/tern.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ext-language_tools.js"></script>
+  <script src="../editor.js"></script>
+
+</body>
+</html>
