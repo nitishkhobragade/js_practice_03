@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Code Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+    background: #454545;
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    padding: 20px;
+    display: flex;
+}
+
+.left, .right {
+    flex-basis: 50%;
+    padding: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 28%;
+    background: #1f1f1f;
+    color: #fff;
+    padding: 8px;
+    border: 0;
+    outline: 0;
+    font-size: 1rem;
+}
+
+iframe{
+    width: 100%;
+    height: 95%;
+    background: #fff;
+    border: 0;
+    outline: 0;
+}
+
+label i {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.html-icon {
+    color: rgb(255, 75, 75);
+}
+
+.css-icon {
+    color: rgb(78, 78, 237);
+}
+
+.js-icon {
+    color: yellow;
+}
+label {
+    display: flex;
+    align-items: center;
+    background: #000;
+    height: 30px;
+}
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <label><i class="fa-brands fa-html5 html-icon"></i>HTML</label>
+            <textarea name="html-code" id="html-code" onkeyup="run()"></textarea>
+
+            <label><i class="fa-brands fa-css3-alt css-icon"></i>CSS</label>
+            <textarea name="css-code" id="css-code" onkeyup="run()"></textarea>
+
+            <label><i class="fa-brands fa-js js-icon"></i>JavaScript</label>
+            <textarea name="js-code" id="js-code" onkeyup="run()"></textarea>
+        </div>
+        <!-- left part end  -->
+
+        <div class="right">
+            <label><i class="fa-solid fa-play"></i>Output</label>
+            <iframe id="output"></iframe>
+        </div>
+        <!-- right part end  -->
+    </div>
+
+    <!-- main part ended  -->
+    <!-- script started  -->
+    <script>    
+    function run() {
+        let htmlCode = document.getElementById("html-code").value;
+        let cssCode = document.getElementById("css-code").value;
+        let jsCode = document.getElementById("js-code").value;
+        let output = document.getElementById("output");
+
+        output.contentDocument.body.innerHTML = htmlCode + "<style>" +cssCode +"</style>";
+        output.contentWindow.eval(jsCode);
+    }
+    </script>
+</body>
+</html>
