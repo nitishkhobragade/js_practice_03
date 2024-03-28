@@ -77,25 +77,31 @@ label {
 
 </head>
 <body>
-    <div class="container">
-        <div class="left">
-            <label><i class="fa-brands fa-html5 html-icon"></i>HTML</label>
-            <textarea name="html-code" id="html-code" onkeyup="run()"></textarea>
+<div class="container">
+<div class="left">
+<label><i class="fa-brands fa-html5 html-icon"></i>HTML</label>
+<textarea name="html-code" id="html-code" onkeyup="run()"><input type="button" value="click" onclick="msg()"/>  </textarea>
 
-            <label><i class="fa-brands fa-css3-alt css-icon"></i>CSS</label>
-            <textarea name="css-code" id="css-code" onkeyup="run()"></textarea>
+<label><i class="fa-brands fa-css3-alt css-icon"></i>CSS</label>
+<textarea name="css-code" id="css-code" onkeyup="run()"></textarea>
 
-            <label><i class="fa-brands fa-js js-icon"></i>JavaScript</label>
-            <textarea name="js-code" id="js-code" onkeyup="run()"></textarea>
-        </div>
-        <!-- left part end  -->
+<label><i class="fa-brands fa-js js-icon"></i>JavaScript</label>
+<textarea name="js-code" id="js-code" onkeyup="run()">
+function msg() {
+    setTimeout(
+        function() {
+            alert("Welcome to Javatpoint after 3 seconds")
+        }, 3000);
+}</textarea>
+</div>
+<!-- left part end  -->
 
-        <div class="right">
-            <label><i class="fa-solid fa-play"></i>Output</label>
-            <iframe id="output"></iframe>
-        </div>
-        <!-- right part end  -->
-    </div>
+<div class="right">
+<label><i class="fa-solid fa-play"></i>Output</label>
+<iframe id="output"></iframe>
+</div>
+<!-- right part end  -->
+</div>
 
     <!-- main part ended  -->
     <!-- script started  -->
