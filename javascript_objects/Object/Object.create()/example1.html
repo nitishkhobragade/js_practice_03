@@ -26,9 +26,18 @@
     <button id="copyButton">Copy Code</button>
 </div>
 <div class="editor-container">
-  <!-- your code editor starts here  -->
+<!-- your code editor starts here  -->
 <div id="editor"><!--Write Your Code in This div-->
-
+const people = {  
+  printIntroduction: function ()  
+    {  
+    console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);  
+  }  
+};  
+const me = Object.create(people);  
+me.name = "Marry"; // "name" is a property set on "me", but not on "person"  
+me.isHuman = true; // inherited properties can be overwritten
+me.printIntroduction();  
 </div>
 <!-- your code editor ends here  -->
 </div>
