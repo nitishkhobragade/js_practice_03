@@ -20,14 +20,30 @@
   <link rel="stylesheet" href="../editor.css" />
 </head>
 <body>
-  <h3 class="question">Write Your JavaScript Code Here</h3>
+  <h3 class="question">Prototype-based Inheritance in JavaScript with Constructors using Object.create()</h3>
   <div class="btn-container">
     <button id="runBtn">Run</button>
     <button id="copyButton">Copy Code</button>
 </div>
 <div class="editor-container">
-  <!-- your code editor starts here  -->
+<!-- your code editor starts here  -->
 <div id="editor"><!--Write Your Code in This div-->
+const object1 = {}; // Creates an empty object and assigns it to the variable "object1"
+
+Object.defineProperty(object1, 'property1', {  
+  value: 42, // Sets the value of the 'property1' property to 42
+  value: 52, // Overwrites the previous value, setting 'property1' to 52
+  value: 542, // Overwrites the previous value again, setting 'property1' to 542
+}); 
+
+object1.property1 = 177; // Attempts to assign a new value (177) to the 'property1' property of object1, but it won't work due to being defined with the value 542 and non-configurable
+
+//it throws an error in strict mode
+console.log(object1.property1);
+
+// The line above would throw an error in strict mode because the property 'property1' was defined using defineProperty with no getter or setter, 
+// so attempting to read it would result in an error due to the property being non-configurable and non-writable.
+
 
 </div>
 <!-- your code editor ends here  -->
