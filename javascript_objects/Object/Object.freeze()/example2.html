@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="../editor.css" />
 </head>
 <body>
-  <h3 class="question">Type Your Code Her</h3>
+  <h3 class="question">Prototype-based Inheritance in JavaScript with Constructors using Object.create()</h3>
   <div class="btn-container">
     <button id="runBtn">Run</button>
     <button id="copyButton">Copy Code</button>
@@ -28,19 +28,10 @@
 <div class="editor-container">
 <!-- your code editor starts here  -->
 <div id="editor"><!--Write Your Code in This div-->
-const obj = {};  // Creates an empty object named obj
-Object.defineProperties(obj, {  // Defines properties on obj
-  property1: {  // Defines property1
-    value: 142,  // Assigns value 142 to property1
-    value: 422,  // Overwrites previous value with 422 (only the last value assignment will be considered)
-    value: 423,  // Overwrites previous value with 423 (only the last value assignment will be considered)
-  },  
-  property2: {  // Defines property2
-    value: 22,  // Assigns value 22 to property2
-    value: 12,  // Overwrites previous value with 12 (only the last value assignment will be considered)
-  }  
-});  
-console.log(obj.property1, obj.property2);  // Logs the values of property1 and property2 to the console  
+const obj1 = { property1: 'freeze'};  // Creates an object named obj1 with property1 set to 'freeze'
+const obj2 = Object.freeze(obj1);  // Freezes obj1 and assigns it to obj2
+obj2.property1 = 'new_data';  // Attempting to modify property1 of obj2 (which is frozen) - this line won't throw an error but the modification won't occur
+console.log(obj2.property1);  // Logs the value of property1 of obj2 to the console (it remains 'freeze')
 </div>
 <!-- your code editor ends here  -->
 </div>
