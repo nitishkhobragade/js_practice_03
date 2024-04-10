@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Example</title>
+  <meta name="description" content="An online JavaScript compiler made by Nitish Khobragade. Write, run, and copy your JavaScript code. The best online tool for JavaScript coding, with features such as syntax highlighting, code completion, and more.">
+  <meta name="author" content="Nitish Khobragade">
+  <meta name="keywords" content="JavaScript, compiler, online, Nitish Khobragade">
+  <!-- Add more relevant meta tags as needed -->
+  
+  <!-- Google Search Console Verification (replace CONTENT with your verification code) -->
+  <!-- <meta name="google-site-verification" content="CONTENT"> -->
+  
+  <!-- Open Graph Meta Tags (for better sharing on social media) -->
+  <meta property="og:title" content="FIND LARGEST NUMBER IN ARRAY">
+  <meta property="og:description" content="An online JavaScript compiler made by Nitish Khobragade. Write, run, and copy your JavaScript code.">
+  <!-- Add more Open Graph meta tags as needed -->
+  <link rel="stylesheet" href="../editor.css" />
+</head>
+<body>
+  <h3 class="question">Type Your Code Here</h3>
+  <div class="btn-container">
+    <button id="runBtn">Run</button>
+    <button id="copyButton">Copy Code</button>
+</div>
+<div class="editor-container">
+<!-- your code editor starts here  -->
+<div id="editor"><!--Write Your Code in This div-->
+const object1 = {
+  property1: 42 // Initializing an object with a property named 'property1' and assigning it a value of 42.
+};
+const object2 = {
+  property2: 23 // Initializing another object with a property named 'property2' and assigning it a value of 23.
+};
+const descriptors1 = Object.getOwnPropertyDescriptors(object1); // Retrieving property descriptors of all properties of object1.
+const descriptors2 = Object.getOwnPropertyDescriptors(object2); // Retrieving property descriptors of all properties of object2.
+console.log(descriptors1.property1.writable); // Outputting whether the property1 of object1 is writable or not.
+console.log(descriptors1.property1.value, descriptors2.property2.value); // Outputting the value of property1 of object1 and property2 of object2.
+
+</div>
+<!-- your code editor ends here  -->
+</div>
+<div class="result-container">
+<h3>Output:</h3>
+<div id="result"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tern/0.12.0/tern.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ext-language_tools.js"></script>
+<script src="../editor.js"></script>
+
+
+</body>
+</html>
