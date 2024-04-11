@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Example</title>
+  <meta name="description" content="An online JavaScript compiler made by Nitish Khobragade. Write, run, and copy your JavaScript code. The best online tool for JavaScript coding, with features such as syntax highlighting, code completion, and more.">
+  <meta name="author" content="Nitish Khobragade">
+  <meta name="keywords" content="JavaScript, compiler, online, Nitish Khobragade">
+  <!-- Add more relevant meta tags as needed -->
+  
+  <!-- Google Search Console Verification (replace CONTENT with your verification code) -->
+  <!-- <meta name="google-site-verification" content="CONTENT"> -->
+  
+  <!-- Open Graph Meta Tags (for better sharing on social media) -->
+  <meta property="og:title" content="FIND LARGEST NUMBER IN ARRAY">
+  <meta property="og:description" content="An online JavaScript compiler made by Nitish Khobragade. Write, run, and copy your JavaScript code.">
+  <!-- Add more Open Graph meta tags as needed -->
+  <link rel="stylesheet" href="../editor.css" />
+</head>
+<body>
+  <h3 class="question">Prototype-based Inheritance in JavaScript with Constructors using Object.create()</h3>
+  <div class="btn-container">
+    <button id="runBtn">Run</button>
+    <button id="copyButton">Copy Code</button>
+</div>
+<div class="editor-container">
+<!-- your code editor starts here  -->
+<div id="editor"><!--Write Your Code in This div-->
+var obj = { 0: 'a', 1: 'b', 2: 'c' }; // Creating an object with numerical properties.
+
+console.log(Object.getOwnPropertyNames(obj).sort()); // Logs the property names of obj sorted in ascending order.
+
+// Logging property names and values using Array.forEach
+Object.getOwnPropertyNames(obj).forEach(function(val, idx, array) {
+    console.log(val + '->' + obj[val]); // Logs each property name and its corresponding value.
+});
+
+// let's break down the `forEach` method and its parameters:
+
+// 1. **forEach**: 
+//   - `forEach` is a method available on arrays in JavaScript.
+//   - It iterates over each element of the array and executes a provided function once for each element.
+
+// 2. **function(val, idx, array)**:
+//   - Here, `function(val, idx, array)` is a callback function provided to `forEach`.
+//   - This callback function is executed for each element in the array.
+//   - It takes three parameters:
+//      - `val`: The current value of the element being processed.
+//      - `idx`: The index of the current element being processed.
+//      - `array`: The array on which `forEach` was called (in this case, the array of property names obtained from the object).
+
+// So, when `Object.getOwnPropertyNames(obj).forEach(function(val, idx, array) {...})` is executed:
+// - `val` represents each property name of the object `obj` during iteration.
+// - `idx` represents the index of the current property name being iterated.
+// - `array` represents the array of property names obtained from `obj`. However, in this particular usage, it's not used because `array` represents the array on which `forEach` was called, and we are directly iterating over the property names of the object.
+
+</div>
+<!-- your code editor ends here  -->
+</div>
+<div class="result-container">
+<h3>Output:</h3>
+<div id="result"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tern/0.12.0/tern.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ext-language_tools.js"></script>
+<script src="../editor.js"></script>
+
+
+</body>
+</html>
