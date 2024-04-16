@@ -57,19 +57,19 @@ function runCode() {
 
 
 
-// // Function to copy the code from the editor
-// function copyCode() {
-//     var code = editor.getValue();
-//     if(code != "") {
-//         alert('Code copied to clipboard.')
-//         navigator.clipboard.writeText(code)
-//     } else {
-//         alert('Editor is empty, Please enter the Code first !')
-//     }
-// }
+// Function to copy the code from the editor
+function copyCode() {
+    var code = editor.getValue();
+    if(code != "") {
+        alert('Code copied to clipboard.')
+        navigator.clipboard.writeText(code)
+    } else {
+        alert('Editor is empty, Please enter the Code first !')
+    }
+}
 
-// // Run button click event listener
-// document.getElementById('runBtn').addEventListener('click', runCode);
+// Run button click event listener
+document.getElementById('runBtn').addEventListener('click', runCode);
 
-// // Copy button click event listener
-// document.getElementById('copyButton').addEventListener('click', copyCode);
+// Copy button click event listener
+document.getElementById('copyButton').addEventListener('click', copyCode);
