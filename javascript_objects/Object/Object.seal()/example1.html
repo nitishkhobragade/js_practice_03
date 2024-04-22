@@ -28,24 +28,15 @@
 <div class="editor-container">
   <!-- your code editor starts here  -->
 <div id="editor"><!--Write Your Code in This div-->
-let raay = {  
-  drive() {  
-    return 'Add raay';  
-  }  
-}  // Defines an object raay with a drive method
+const obj1 = { property1: 'Marry'};  
+// Defines an object obj1 with a property property1
 
-let naty  = {  
-  net() {  
-    return 'use net';  
-  }  
-}  // Defines an object naty with a net method
+const obj2 = Object.seal(obj1);  
+// Prevents other code from deleting properties of an object  
 
-// Set raay's __proto__ to naty's __proto__'s __proto__
-Object.setPrototypeOf(naty, raay);  
-
-console.dir(naty); // Prints the naty object  
-console.log(naty.net()); // Outputs: use net  
-console.log(naty.drive()); // Outputs: Add raay    
+obj2.property1 = 'carry';  
+console.log(obj2.property1);  
+// Outputs: carry    
 </div>
 <!-- your code editor ends here  -->
 </div>

@@ -28,25 +28,18 @@
 <div class="editor-container">
 <!-- your code editor starts here  -->
 <div id="editor"><!--Write Your Code in This div-->
-var Animal = {  
-  speak() {  
-    console.log(this.name + ' makes');  
-  }  
-};  // Defines an object Animal with a speak method
+const object1 = {  
+  property1: 29  
+};  // Defines an object object1 with a property property1
 
-class Dog {  
-  constructor(name) {  
-  this.name = name;  
-  }  
-}  // Defines a Dog class with a constructor
+Object.seal(object1);  
+// Prevents other code from deleting properties of an object  
 
-Object.setPrototypeOf(Dog.prototype, Animal);   
-// Sets the prototype of Dog's prototype to Animal's prototype
-// If you do not do this you will get a TypeError when you invoke speak
+object1.property1 = 45;  
+console.log(object1.property1);  // Outputs: 45
 
-var d = new Dog('people');  
-// Creates a new instance of Dog with the name 'people'
-d.speak();  // Outputs: people makes 
+delete object1.property1;  
+// Cannot delete when sealed   
 </div>
 <!-- your code editor ends here  -->
 </div>
